@@ -1,0 +1,22 @@
+export const ROUTES = {
+  FARMER: {
+    FARMER: "/farmer",
+    USERMANAGEMENT: "/farmer/user-management",
+    ORDERMANAGEMENT: "/farmer/order-management",
+    FARMMANAGEMENT: "/farmer/farm-management",
+    INPUTSUPPLIERS: "/farmer/input-suppliers",
+    LANDBANKING: "/farmer/land-banking",
+    MARKETPLACEPRICES: "/farmer/marketplace-prices",
+    WAREHOUSING: "/farmer/warehousing",
+    MARKETINGEXPORTS: "/farmer/marketing-exports",
+    LOGISTICSDELIVERY: "/farmer/logistics-delivery",
+    FINANCIALSERVICES: "/farmer/financial-services",
+    CREDITRATINGS: "/farmer/credit-ratings",
+    INSURANCESERVICES: "/farmer/insurance-services",
+    EXTENSIONSERVICES: "/farmer/extension-services",
+    TRAINING: "/farmer/training",
+    COOPERATIVES: "/farmer/co-operatives",
+    SETTINGS: "/farmer/settings",
+    SUPPORT: "/farmer/support",
+  },
+};

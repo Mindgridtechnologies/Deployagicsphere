@@ -1,0 +1,131 @@
+import {
+  CooperativesIcon,
+  CreditRatingIcon,
+  ExtensionServiceIcon,
+  FarmManagementIcon,
+  FinicialServiceIcon,
+  HomeIcon,
+  InputSuppliersIcon,
+  InsuranceServicesIcon,
+  LandBankingIcon,
+  LogisticsIcon,
+  MarketingExportsIcon,
+  MarketPlaceIcon,
+  OrderManagementIcon,
+  SupportIcon,
+  TrainingIcon,
+  UserManagementIcon,
+} from "@/public/icons";
+import { ROUTES } from "./route";
+import { Settings2Icon, WarehouseIcon } from "lucide-react";
+
+export const farmerSidebarList = [
+  {
+    id: 1,
+    sidebar: "Home",
+    link: ROUTES.FARMER.FARMER,
+    icon: <HomeIcon />,
+  },
+  {
+    id: 2,
+    sidebar: "User Management",
+    link: ROUTES.FARMER.USERMANAGEMENT,
+    icon: <UserManagementIcon />,
+  },
+  {
+    id: 3,
+    sidebar: "Order Management",
+    link: ROUTES.FARMER.ORDERMANAGEMENT,
+    icon: <OrderManagementIcon />,
+  },
+  {
+    id: 4,
+    sidebar: "Farm Management",
+    link: ROUTES.FARMER.FARMMANAGEMENT,
+    icon: <FarmManagementIcon />,
+  },
+  {
+    id: 5,
+    sidebar: "Input Suppliers",
+    link: ROUTES.FARMER.INPUTSUPPLIERS,
+    icon: <InputSuppliersIcon />,
+  },
+  {
+    id: 6,
+    sidebar: "Land Banking",
+    link: ROUTES.FARMER.LANDBANKING,
+    icon: <LandBankingIcon />,
+  },
+  {
+    id: 7,
+    sidebar: "Marketplace & Prices",
+    link: ROUTES.FARMER.MARKETPLACEPRICES,
+    icon: <MarketPlaceIcon />,
+  },
+  {
+    id: 8,
+    sidebar: "Warehousing",
+    link: ROUTES.FARMER.WAREHOUSING,
+    icon: <WarehouseIcon />,
+  },
+  {
+    id: 9,
+    sidebar: "Marketing & Exports",
+    link: ROUTES.FARMER.MARKETINGEXPORTS,
+    icon: <MarketingExportsIcon />,
+  },
+  {
+    id: 10,
+    sidebar: "Logistics & Delivery",
+    link: ROUTES.FARMER.LOGISTICSDELIVERY,
+    icon: <LogisticsIcon />,
+  },
+  {
+    id: 11,
+    sidebar: "Financial Services",
+    link: ROUTES.FARMER.FINANCIALSERVICES,
+    icon: <FinicialServiceIcon />,
+  },
+  {
+    id: 12,
+    sidebar: "Credit Ratings",
+    link: ROUTES.FARMER.CREDITRATINGS,
+    icon: <CreditRatingIcon />,
+  },
+  {
+    id: 13,
+    sidebar: "Insurance Services",
+    link: ROUTES.FARMER.INSURANCESERVICES,
+    icon: <InsuranceServicesIcon />,
+  },
+  {
+    id: 14,
+    sidebar: "Extension Services",
+    link: ROUTES.FARMER.EXTENSIONSERVICES,
+    icon: <ExtensionServiceIcon />,
+  },
+  {
+    id: 15,
+    sidebar: "Training",
+    link: ROUTES.FARMER.TRAINING,
+    icon: <TrainingIcon />,
+  },
+  {
+    id: 16,
+    sidebar: "Co-operatives",
+    link: ROUTES.FARMER.COOPERATIVES,
+    icon: <CooperativesIcon />,
+  },
+  {
+    id: 17,
+    sidebar: "Settings",
+    link: ROUTES.FARMER.SETTINGS,
+    icon: <Settings2Icon />,
+  },
+  {
+    id: 18,
+    sidebar: "Support",
+    link: ROUTES.FARMER.SUPPORT,
+    icon: <SupportIcon />,
+  },
+];
