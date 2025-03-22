@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-// import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import axios from "axios";
 import dynamic from "next/dynamic";
@@ -11,6 +10,7 @@ interface LocationMapProps {
   onLocationChange: (location: string) => void;
 }
 
+// Dynamically import MapContainer and TileLayer with no SSR
 const MapContainer = dynamic(
   () => import("react-leaflet").then((mod) => mod.MapContainer),
   { ssr: false }
@@ -24,9 +24,7 @@ export default function LocationMap({
   selectedLocation = "",
   onLocationChange,
 }: LocationMapProps) {
-  const [coords, setCoords] = useState<{ lat: number; lng: number } | null>(
-    null
-  );
+  const [coords, setCoords] = useState<{ lat: number; lng: number } | null>(null);
   const [input, setInput] = useState("");
   const [, setAddress] = useState("");
 
@@ -42,7 +40,6 @@ export default function LocationMap({
       ) {
         setCoords({ lat: coordsArray[0], lng: coordsArray[1] });
         setInput(selectedLocation);
-        // return;
       }
     }
 
@@ -93,29 +90,34 @@ export default function LocationMap({
       setCoords({ lat: coordsArray[0], lng: coordsArray[1] });
       fetchAddress(coordsArray[0], coordsArray[1]);
       onLocationChange(value);
-      console.log("Coordinates:", coordsArray[0] && coordsArray[1]);
+      console.log("Coordinates:", coordsArray[0], coordsArray[1]);
     }
   };
 
   return (
     <div className="flex flex-col items-center gap-4">
       <div className="w-[700px] relative bg-[#D9F3E8]">
-        <MapContainer
-          center={coords ? [coords.lat, coords.lng] : [6.5244, 3.3792]}
-          zoom={13}
-          style={{
-            height: "250px",
-            width: "100%",
-            position: "absolute",
-            top: 0,
-            left: 0,
-            zIndex: "10",
-            borderRadius: "24px",
-          }}
-          key={coords ? `${coords.lat}-${coords.lng}` : "default"} // Forces re-render on coordinate change
-        >
-          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-        </MapContainer>
+        {coords && (
+          <MapContainer
+            center={[coords.lat, coords.lng]}
+            zoom={13}
+            style={{
+              height: "250px",
+              width: "100%",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              zIndex: 10, // Corrected: zIndex should be a number
+              borderRadius: "24px",
+            }}
+            key={coords ? `${coords.lat}-${coords.lng}` : "default"}
+          >
+            <TileLayer
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            />
+          </MapContainer>
+        )}
         <div className="absolute flex mx-auto">
           <input
             type="text"
